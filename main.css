@@ -1,0 +1,64 @@
+* {
+    padding: 0; 
+    margin: 0; 
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* em -> define o tamanho com base no elemento pai*/
+    font-size: 2rem; /* define o tamanho com base no root */
+
+}
+
+/* A vírgula é para formatar ambos */
+header, footer {
+    background-color: brown;
+    text-align: center; 
+
+}
+
+nav ol {
+    /* display fle é no ol porque é o "pai / conteiner" dos elementos */
+    display: flex; 
+    justify-content: center; 
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a {
+    background-color: rgba(235, 134, 134, 0.534);
+    padding: 1rem;
+    width: 20rem;
+    margin: 1rem;
+    display: inline-block;
+    /* 
+    A marcação de ancora tem um comportamento "inline", isto é, o padding e width não funcionam corretamente. Então, é necessário colocar o display: inline-block, que permitirá um comportamente híbrido, isto é, inline (um ao lado do outro) e block (permite o width e padding corretamente) 
+    A estratégia de colocar essa formatação no âncora é para levar ao usuário USABILIDADE, toda a área do botão clicável
+    */
+}
+
+nav li {
+    list-style-type: none; /* tira os marcadores de lista */
+}
+
+nav li a:hover { /* Subclasse do css para efeito de passar o mouse */
+    background-color: black;
+}
+
+main {
+    max-width: 70rem; /* Define uma largura máxima (mais responsivo) */
+    margin: 0 auto; /* Coloca a bloco o centro, auto de automático */
+    /* Para colocar um bloco no centro, pode-se usar width com margin ou display flex com justify-content */
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+section {
+    width: 27rem; 
+    border: 1px solid black; /* espessura estilo cor */
+    padding: 1rem;
+    margin: 1rem;
+}
