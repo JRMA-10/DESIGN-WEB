@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>DIRETORIA DE EXTENÇÃO - DIREX</h1>
+    <h2>CADASTRO PARA ESTÁGIO</h2>
+    <!-- 
+    get -> Os dados ficam na URL
+    Post -> Os dados ficam escondidos
+    -->
+    <form action="resposta.html" method="get">
+        <label for="nome">Nome: </label>
+        <!-- A marcação de label representa o rótulo do campo do formulário, é importante para a acessibilidade -->
+         <!-- A marcação de label precisa ficar relacionada com o componente de entrada de dado, o componente, por exemplo input, pode ficar dentro da marcação ou relacionada com o atributo for da label e id do componente de entrada de dados -->
+        <input type="text" id="nome" name="nome" value="Abraão Vital">
+        <!-- O atributo value é usado para 'editar dados' de um formulário -->
+        <br>
+
+        <label for="email">E-mail: </label>
+        <input type="text" id="email" name="email" placeholder="Digite seu e-mail aqui...">
+        <!-- Placeholder é um atributo de rótulo para colocar um texto dentro do input -->
+        <br>
+
+        <label for="nascimento">Data de nascimento: </label>
+        <input type="date" id="nascimento" disabled>
+        <!-- Disable é um comando para desativar -->
+        <br>
+
+        <label for="curriculo">Currículo: </label>
+        <input type="file" id="curriculo" required> 
+        <br>
+
+        <label for="senha">Senha: </label>
+        <input type="password" id="senha" maxlength="7" minlength="3">
+        <!-- Max e min definem o limite de caracteres -->
+        <br>
+
+        <label for="uf">Estado: </label>
+        <select name="uf" id="uf" >
+            <!-- O componente select é usado para grupo de itens muito similares...
+             O comando 'multiple' permite selecionar vários
+            -->
+            <option value="rn">Rio Grande do Norte</option>
+            <option value="pe" selected>Pernambuco</option>
+            <!-- O comando 'selected' deixa o item ativo -->
+            <option value="pb">Paraíba</option>
+        </select>
+        <!-- Select chamado de combobox -->
+        <br>
+
+        <input type="submit" value="ENVIAR">
+    </form>
+</body>
+</html>
