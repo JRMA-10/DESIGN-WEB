@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ETRUTURAS DE REPETIÇÃO</h1>
+    <p id="texto"></p>
+
+    <ol id="listadealunos"></ol>
+
+    <script>
+        const alunos = ['Carlos', 'Alcides', 'Bianca', 'Danúbia']
+        // Variável de lista alunos
+        document.getElementById('texto').innerHTML = alunos.sort().join(' - ')
+        // Imprimir chamando 2 métodos para lista: sort que é para ordenar e join que insere um caracter entre os elementos
+
+        // For
+        for (let i = 0; i < 10; i++) {
+            // A estrutura de repetição 'for' recebe 3 árâmetros: 
+            // 1° parâmetro: declaração / início
+            // 2° parâmetro: teste lógico
+            // 3° parâmetro: incremento
+            // ++i = i += 1
+            console.log(i)
+        }
+        for (let i = 0; i < 10; i += 2) {
+            console.log("Vasco " + i + " da gama")
+            // 'n' é tipo um br para o console log
+            // '+' concatena a string (valor etático) com variável
+        }
+        for (let i = 10; i > 0; i--) {
+            console.log("Decremento: " + i)
+        }
+
+        // forEach
+        alunos.forEach(item => {
+            // forEach é uma opção prática para imprimir os valores de uma lista
+            // Não é necessário incrementar e nem fazer teste lógico com o comprimento da lista
+            // 'item' é uma variável criada internamente para representar cada item da lista
+            console.log(item)
+        })
+
+        for (let i = 0; i < alunos.length; i++) {
+            console.log(alunos[i])
+            document.getElementById('listadealunos').innerHTML += `<li>${alunos[i]}</li>`
+            // '+=' pega o valor já impresso e coloca um novo
+        }
+
+        let i = 0
+        while (i < 10) {
+            console.log(i)
+            i++ // Não esquecer do incremento senão trava tudo
+        }
+    </script>
+    <h2>EXEMPLOS</h2>
+    <p id="resultados"></p>
+    <script>
+        const resultado = document.getElementById('resultados')
+        for (let i = 0 ; i < 5; i++) {
+            resultado.innerHTML += `<span style='font-size: ${i}rem; '>INFOWEB</span> <br> `
+        }
+    </script>
+    <button id="mudarbg">MUDAR BG</button>
+    <script>
+        let ativado = false
+        const mudar = document.getElementById('mudarbg')
+        mudarbg.addEventListener('click', function (e) {
+            if (ativado) {
+                document.body.style.backgroundColor = 'white'
+                ativado = false
+            }
+            else { 
+                document.body.style.backgroundColor = 'blue'
+                ativado = true
+             }
+        })
+    </script>
+    
+</body>
+</html>
