@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos todos cantar de coração</title>
+</head>
+<body>
+    <h2>String</h2>
+    <script>
+        let nome = 'INFOWEB'
+        console.log("Comprimento da string: " + nome.length)
+        console.log("Posição do caractere da string: " + nome.charAt(3))
+        console.log("Substitui a string: " + nome.replace('INFO', 'Informática para '))
+        console.log("Fatia a string: " + nome.slice(2, 4))
+        // slice 2 parâmetros: posição inicial e a posição final (essa não é impressa)
+        console.log('Coloca em minúsculas: ' + nome.toLocaleLowerCase())
+        console.log('Coloca em maiúsculas: ' + "ifrn".toUpperCase())
+        console.log('Concatena strings: ' + nome.concat(' IFRN'))
+    </script>
+    <h2>EXEMPLO</h2>
+    <p id="resultado"></p>
+    <script>
+        let nome2 = 'DESIGN WEB'
+        for (let i = 0; i <= nome2.length; i++) {
+            document.getElementById('resultado').innerHTML += '<span style="font-size: ' + (i+1) + 'rem;">' +
+                 nome2.charAt(i) +
+                  '</span>'
+        }
+    </script>
+</body>
+</html>
