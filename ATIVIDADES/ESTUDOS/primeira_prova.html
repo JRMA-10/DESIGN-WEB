@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova</title>
+</head>
+<body>
+    <h1>Primeira Prova</h1>
+    <h2>Primeira questão</h2>
+    <button id="cor">Clique aqui para mudar de cor</button>
+    <script>
+        const cor = document.getElementById('cor')
+        const cores = ['White', 'Blue', 'Yellow', 'Red', 'Green']
+        let indice = 0
+        
+        cor.addEventListener('click', e => {
+            if (ativado) {
+                document.body.style.backgroundColor = 'White'
+                ativado = false
+            }
+            else {
+                document.body.style.backgroundColor = 'Blue'
+                ativado = true
+            }
+        })
+    </script>
+
+
+    <h2>Segunda questão</h2>
+    <p id="segunda"></p>
+    <script>
+        const segunda = document.getElementById('segunda')
+    </script>
+
+
+    <h2>Terceira questão</h2>
+    <p id="terceira"></p>
+</body>
+</html>
