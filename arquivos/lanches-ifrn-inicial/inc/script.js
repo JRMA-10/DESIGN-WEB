@@ -1,25 +1,34 @@
-const {createApp, ref} = Vue
+const {createApp, ref, watch} = Vue
 
 const lancheifrn = createApp({
     setup(){
-        const lanches = ref([
+        const lancheifrnLS = localStorage.getItem('lanches')
+    
+        const lanches = ref(
+            lancheifrnLS ? JSON.parse(lancheifrnLS) :
+            [
             // Lista de objetos
-            {
-                descricao: 'Bolo',
-                ativo: true, 
-                imagem: 'bolo.jpg'
-            },
-            {
-                descricao: 'Bolacha', 
-                ativo: false, 
-                imagem: 'bolacha.jpg'
-            }, 
-            {
-                descricao: 'Tapioca', 
-                ativo: false, 
-                imagem: 'tapioca.jpg'
-            }
-        ])
+                {
+                    descricao: 'Bolo',
+                    ativo: true, 
+                    imagem: 'bolo.jpg'
+                },
+                {
+                    descricao: 'Bolacha', 
+                    ativo: false, 
+                    imagem: 'bolacha.jpg'
+                }, 
+                {
+                    descricao: 'Tapioca', 
+                    ativo: false, 
+                    imagem: 'tapioca.jpg'
+                }
+            ]
+        )
+
+        watch(lanches, () => {
+            localStorage.setItem('lanches', JSON.stringify(lanches.value))
+        }, {deep: true, immediate: true})
 
         function mudarAtivo(item){
             lanches.value.forEach(lanche => {

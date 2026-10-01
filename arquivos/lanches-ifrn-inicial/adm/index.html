@@ -6,27 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LANCHES IFRN</title>
     <link rel="stylesheet" href="../inc/principal.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
     <div id="app">
         <app-header></app-header>
-        <main>
+        <main class="">
             <h2>DASHBOARD ADMINISTRATIVO </h2>
+            <section>
+                <fieldset class="adicionar">
+                    <legend>Inserir frutas: </legend>
+                    <input type="text" placeholder="Nova fruta..." v-model="novaFrutaInput">
+                    <button class="add" @click="novaFruta()">INSERIR</button>
+                </fieldset>
 
-            <fieldset class="adicionar">
-                <legend>Inserir lanches: </legend>
-                <input type="text" placeholder="Novo lanche..." v-model="novoLancheInput">
-                <button class="add" @click="novoLanche()">INSERIR</button>
-            </fieldset>
+                <ol>
+                    <li class="fruta" v-for="fruta in frutas">
+                        {{ fruta.descricao }}
+                        <button @click="excluir(frutas, fruta)">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.lP6fK8HAWfJ98ruxm7cI6QHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Delete" class="w-3">
+                        </button>
+                        <button @click="editar(fruta)">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.fvwhxoZjEbwMu4nLCriVwAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" class="w-3">
+                        </button>
+                        
+                    </li>
+                </ol>
+            </section>
+            <section>
+                <fieldset class="adicionar">
+                    <legend>Inserir lanches: </legend>
+                    <input type="text" placeholder="Novo lanche..." v-model="novoLancheInput">
+                    <button class="add" @click="novoLanche()">INSERIR</button>
+                </fieldset>
 
-            <ol>
-                <li class="lanche" v-for="lanche in lanches">
-                    {{ lanche.descricao }}
-                </li>
-            </ol>
+                <ol>
+                    <li class="lanche" v-for="lanche in lanches">
+                        {{ lanche.descricao }}
+                        <button @click="excluir(lanches, lanche)">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.lP6fK8HAWfJ98ruxm7cI6QHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Delete" class="w-3">
+                        </button>
+                    </li>
+                </ol>
+            </section>
+    
 
-        </main>
+        <main></main>
 
         <app-footer></app-footer>
 
