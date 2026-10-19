@@ -1,6 +1,6 @@
 <template>
-  <router-view />
   <Header />
+  <router-view to="/" />
   <Footer />
 </template>
 
@@ -19,5 +19,8 @@ export default {
 </script>
 
 <style>
-
+* {
+  padding: 0;
+  margin: 0;
+}
 </style>

@@ -1,9 +1,12 @@
 <template>
     <header>
-        <h1>
-            <img src="../assets/logo.png" alt="logo">
-            <span>{{ logo.nome }}</span>
-        </h1>
+        <router-link to:="/">
+            <h1>
+                <img src="../assets/logo.png" alt="logo">
+                <span>{{ logo.nome }}</span>
+            </h1>
+        </router-link>
+        
         <nav>
             <ul>
                 <li v-for="nav in navegacao" :key="nav.id">
