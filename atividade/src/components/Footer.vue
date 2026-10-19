@@ -22,9 +22,9 @@
                 <p class="text-gray-400">Criando, aprendendo e inovando através da robótica.</p>
             </div>
             <nav>
-                <ul class="flex flex-wrap basis-64 gap-[2rem] flex-wrap">
+                <ul class="flex flex-wrap basis-64 gap-[2rem] flex-wrap text-white">
                     <li v-for="nome in navegacao" :key="nome.key">
-                        <a :href="nome.link" class="text-white">{{ nome.nome }}</a>
+                        <router-link :to="nome.link">{{ nome.nome }}</router-link>
                     </li>
                 </ul>
             </nav>
@@ -39,7 +39,7 @@ export default {
         return {
             butao: {nome: "Apoiar a Apple Makers"}, 
             navegacao: [
-                { id: 0, nome: 'Quem somos', link: '/quemsomos' }, 
+                { id: 0, nome: 'Quem somos', link: '/quemsomos'}, 
                 { id: 1, nome: 'Projetos', link: '/projetos' }, 
                 { id: 2, nome: 'Conquistas', link: '/conquistas' }, 
                 { id: 3, nome: 'Competições', link: '/competicoes' }, 

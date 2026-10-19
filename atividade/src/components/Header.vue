@@ -7,7 +7,7 @@
         <nav>
             <ul>
                 <li v-for="nav in navegacao" :key="nav.id">
-                    <a :href="nav.link">{{ nav.nome }}</a>
+                    <router-link :to="nav.link">{{ nav.nome }}</router-link>
                 </li>
                 <li>
                     <button>
@@ -16,36 +16,6 @@
                 </li>
             </ul>
         </nav>
-        <div id="carouselStackedIndicators" class="carousel slide">
-        <div class="carousel-inner rounded-5">
-            <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <div class="d-flex justify-content-between align-items-center">
-            <div>
-            <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselStackedIndicators" data-bs-slide="prev">
-                <span class="carousel-icon-prev" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselStackedIndicators" data-bs-slide="next">
-                <span class="carousel-icon-next" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            </div>
-            <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselStackedIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselStackedIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselStackedIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-        </div>
-        </div>
     </header>
 </template>
 
@@ -58,7 +28,7 @@ export default {
                 nome: 'Apple Makers',
             },
             navegacao: [
-                { id: 0, nome: 'Quem somos', link: '/quemsomos' }, 
+                { id: 0, nome: 'Quem somos', link: '/quemsomos'}, 
                 { id: 1, nome: 'Projetos', link: '/projetos' }, 
                 { id: 2, nome: 'Conquistas', link: '/conquistas' }, 
                 { id: 3, nome: 'Competições', link: '/competicoes' }, 
