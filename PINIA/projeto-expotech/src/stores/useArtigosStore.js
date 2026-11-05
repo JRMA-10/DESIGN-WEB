@@ -41,9 +41,7 @@ export const useArtigosStore = defineStore('artigos',() => {
             favorito: false
         })
     }
-    function listarFavoritos() {
-        const favoritos = artigos.filter(noticia => noticia.favorito === true)
-    }
+
 
     //watch é o observador de mudanças
     watch( 

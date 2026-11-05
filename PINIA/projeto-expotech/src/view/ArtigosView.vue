@@ -1,11 +1,11 @@
 <script setup>
 import { ref } from 'vue'
-import { useArtigosStore } from '@/stores/useNoticiasStore'
+import { useArtigosStore } from '@/stores/useArtigosStore'
 const artigosStore = useArtigosStore()
 const titulo = ref('')
 const texto = ref('')
 
-function adicionarArtigoView() { 
+function adicionarArtigoView() {
     artigosStore.adicionarArtigo({
         titulo: titulo.value, 
         texto: texto.value
@@ -28,7 +28,7 @@ function adicionarArtigoView() {
         <button type="submit">SUBMETER ARTIGO</button>
     </form>
 
-    <div v-for="artigo in artigosStore.artigo" :key="artigo.id">
+    <div v-for="artigo in artigosStore.artigos" :key="artigo.id">
         <h3>{{ artigo.titulo }}</h3>
         <p>{{ artigo.texto }}</p>
         <button @click="artigosStore.removerArtigo(artigo.id)">Remover</button>
