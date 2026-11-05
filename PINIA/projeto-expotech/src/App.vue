@@ -1,4 +1,11 @@
 <template>
+  <header>
+    <nav>
+      <ul>
+        
+      </ul>
+    </nav>
+  </header>
   <router-view />
 </template>
 
